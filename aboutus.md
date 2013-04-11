@@ -4,11 +4,10 @@ layout: default
 title: About us
 ---
 
-Ivan Hanigan 1, Steven McEachern 2, David Fisher 3.
+Bruce Doran - Fenner School of Environment and Society, Australian National University.
 
+Ivan Hanigan - National Centre for Epidemiology and Population Health, Australian National University.
 
-- 1 National Centre for Epidemiology and Population Health, Australian National University
-- 2 Australian Data Archive, Australian National University
-- 3 Information Technology Services, Australian National University
+Steven McEachern - Australian Data Archive, Australian National University.
 
-Last Updated 5 March 2013
+Last Updated 12 April 2013

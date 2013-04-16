@@ -4,7 +4,17 @@ layout: default
 title: About us
 ---
 
-Last Updated 12 April 2013
+The members of the email list are below.
+
+If you are an ANU staff or student you can go to [http://alliance.anu.edu.au](http://alliance.anu.edu.au) and:
+- log on with your ANU Horus identity
+- and then go
+My Workspace > Membership > Joinable sites 
+- search for GIS forum and join (it is public).
+ 
+If you are not ANU you can email the list and request being added, and someone will do that for you. 
+
+Last Updated 17 April 2013
 
 
  Agmen, Fiona                 

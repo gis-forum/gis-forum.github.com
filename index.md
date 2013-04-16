@@ -18,3 +18,5 @@ We focus on the following 5 themes:
 3. Data Analysis
 4. Training
 5. Communication
+
+<iframe style="border: none;" height="400" width="600" src="http://115.146.93.225:8181/geoexplorer/viewer/#maps/1"></iframe>

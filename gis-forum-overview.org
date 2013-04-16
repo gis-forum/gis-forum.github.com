@@ -33,8 +33,10 @@
           </strong>
           <!--<p>GIS Forum</p>-->
   
-                <p>Links:</p>
-                <a class="Contact the project" href="mailto:gis_forum@alliance.anu.edu.au">Contact the project →</a>  
+                <!-- <p>Links:</p> -->
+                <a class="home" href="http://gis-forum.github.com">Home →</a>  
+                <p></p>
+                <a class="Contact the project" href="mailto:gis_forum@alliance.anu.edu.au">Contact the forum →</a>  
                 <!--<p></p>-->
                 <!--<a class="Font of all wisdom" href="www.google.com">Font of all wisdom →</a>-->  
                 <p></p>
@@ -73,8 +75,6 @@
   
 #+end_src
 
-
-* Open Software - Restricted Data.
 ** Index
 *** COMMENT Index-head
 #+name:index
@@ -88,14 +88,7 @@ title: GIS Forum
 *** Abstract
 #+name:Index-prose
 #+begin_src markdown :tangle index.md :exports reports :eval no
-We are a group of GIS users who have come together as a community of practice and provide consulting and training services.
-
-Please feel free to email the forum at gis_forum@alliance.anu.edu.au
-
-All GIS questions or comments are welcomed.
-
-The forum meets TUESDAYS at 1-2pm at the Australian National University in Canberra, in room F2 of the old Forestry Building 48 - or ICAM tea-room http://quicklink.anu.edu.au/m2eq.
-
+We are a group of GIS users who have come together as a community of practice.  Please feel free to email the forum at <a class="Contact the project" href="mailto:gis_forum@alliance.anu.edu.au">the group email list</a>. All GIS questions or comments are welcomed.
 We focus on the following 5 themes:
 1. Data Aquisition
 2. Data Management
@@ -103,9 +96,11 @@ We focus on the following 5 themes:
 4. Training
 5. Communication
 
+The forum meets TUESDAYS at 1-2pm at the Australian National University in Canberra, usually in room F2 of the old Forestry Building (48) - or at one of the locations shown below. 
 
+<iframe style="border: none;" height="400" width="600" src="http://115.146.93.225:8181/geoexplorer/viewer/#maps/2"></iframe>
 #+end_src
-
+# [http://quicklink.anu.edu.au/m2eq](http://quicklink.anu.edu.au/m2eq).
 *** COMMENT Index-code
 #+name:asdf
 #+begin_src R :session *R* :tangle no :exports none :eval no
@@ -140,14 +135,227 @@ layout: default
 title: About us
 ---
 
-Bruce Doran - Fenner School of Environment and Society, Australian National University.
-
-Ivan Hanigan - National Centre for Epidemiology and Population Health, Australian National University.
-
-Steven McEachern - Australian Data Archive, Australian National University.
-
 Last Updated 12 April 2013
+
+
+ Agmen, Fiona                 
+ Andrews, Ambrose             
+ Bagheri, Nasser              
+ Beaty, Matthew               
+ Beh, Jie-Lian                
+ ben.searle                   
+ Booneeady, Prithiviraj       
+ brad.lee                     
+ bryonyretter                 
+ Burgher, Isabela             
+ Burns, Emma                  
+ Butler, Ainslie              
+ Butler, Danielle             
+ cchartres2                   
+ conan.liu                    
+ Dallakoti, Babu              
+ Dancey, Kay                  
+ Davies, Ben                  
+ Dear, Keith                  
+ Doran, Bruce                 
+ Ens, Emilie-Jane             
+ Evans, Ben                   
+ Evans, Megan                 
+ frank.detering               
+ Fu, Baihua                   
+ Gray, Cathy                  
+ Griffiths, Rachael           
+ grzegorz                     
+ Hanigan, Ivan                
+ Hewett, Michael              
+ Hicks, Andrew                
+ Hugh, Sonia                  
+ Hunter, Nerida               
+ Iwanaga, Iwanaga             
+ jin.cui                      
+ Jones, Eriita                
+ josephguillaume              
+ julia.mcquoid                
+ Kawaye, Floney               
+ Khan, Nasreen                
+ Konings, Paul                
+ Kraus, Hans-Joerg            
+ Kuramotto De Bednarik, Carola
+ Lee, Peter                   
+ Lei, Junran                  
+ Lucas, Claire                
+ MacFarlane, Kevin            
+ Magnus, Muhammad             
+ Manger, Peter                
+ Markham, Francis             
+ martin.young                 
+ Mazumdar, Soumya             
+ McDougall, Janet             
+ McEachern, Steven            
+ McFarlane, Rosemary          
+ McNellie, Megan              
+ McQuoid, Julia               
+ Merrin, Linda                
+ Moon, Brenda                 
+ Nizette, Mark                
+ Patrick, Marian              
+ peter.taylor                 
+ Porfirio, Luciana            
+ Potter, Sandra               
+ Powell, Susan                
+ Rangkuti, Hasnani            
+ robert.davy                  
+ Roberts, Simon               
+ Roberts, Steven              
+ robyn.kinghamedwards         
+ romcfarlane                  
+ Sato, Chloe                  
+ Singh Dillon, Wira           
+ ssilcot                      
+ Stein, Janet                 
+ stuart.collins.mail          
+ Szarka, Ian                  
+ Talent, Mishka               
+ Tennant, Philip              
+ Thompson, Chris              
+ Van Bommel, Linda            
+ Viennet, Elvina              
+ Xiang, Fan                   
 
 #+end_src
 
-* COMMENT disqus
+*** COMMENT add locations to map-code
+#+name:add locations to map
+#+begin_src R :session *R* :tangle no :exports none :eval yes
+  ################################################################
+  # name:add locations to map
+  require(gisviz)
+  require(swishdbtools)
+  pwd <- getPassword()
+  ch  <- connect2postgres("130.56.60.77", "gislibrary", "postgres", pwd)
+  
+  dir()
+  df <- read_file("gisforumlocns.xls")
+  df
+  df2 <- as.data.frame(matrix(nrow=0, ncol=3))
+  for(loc in df[,1])
+    {
+      gloc  <- gGeoCode2(loc)
+      df2  <- rbind(df2, gloc)    
+    }
+  locations  <- df2
+  locations
+  # found error
+  locations[2,2] <- -35.27793
+  locations[2,3] <- 149.11596
+  ## Treat data frame as spatial points
+  epsg <- make_EPSG()
+  pts <- SpatialPointsDataFrame(cbind(locations$long,locations$lat),locations,
+    proj4string=CRS(epsg$prj4[epsg$code %in% '4283']))
+  # plus others if(file.exists("gisforumlocns.shp")) file.remove("gisforumlocns.shp")
+  writeOGR(pts, "gisforumlocns.shp", "gisforumlocns", "ESRI Shapefile")
+  
+  load2postgres_shp(filename="gisforumlocns.shp", out_schema="public", out_table="gisforumlocations",
+                    ipaddress="130.56.60.77", u="postgres", d="gislibrary", remove = F, eval = T)
+  dbSendQuery(ch, "grant select on gisforumlocations to gislibrary")
+#+end_src
+
+*** COMMENT get-names-code
+#+name:get-names
+#+begin_src R :session *R* :tangle no :exports none :eval yes
+    ################################################################
+    # name:get-names
+    require(swishdbtools)
+    dir()
+    names  <- read_file("gisforumnames.xlsx")
+    head(names)
+    nrow(names)
+    names
+  
+  
+  
+   Agmen, Fiona                 
+   Andrews, Ambrose             
+   Bagheri, Nasser              
+   Beaty, Matthew               
+   Beh, Jie-Lian                
+   ben.searle                   
+   Booneeady, Prithiviraj       
+   brad.lee                     
+   bryonyretter                 
+   Burgher, Isabela             
+   Burns, Emma                  
+   Butler, Ainslie              
+   Butler, Danielle             
+   cchartres2                   
+   conan.liu                    
+   Dallakoti, Babu              
+   Dancey, Kay                  
+   Davies, Ben                  
+   Dear, Keith                  
+   Doran, Bruce                 
+   Ens, Emilie-Jane             
+   Evans, Ben                   
+   Evans, Megan                 
+   frank.detering               
+   Fu, Baihua                   
+   Gray, Cathy                  
+   Griffiths, Rachael           
+   grzegorz                     
+   Hanigan, Ivan                
+   Hewett, Michael              
+   Hicks, Andrew                
+   Hugh, Sonia                  
+   Hunter, Nerida               
+   Iwanaga, Iwanaga             
+   jin.cui                      
+   Jones, Eriita                
+   josephguillaume              
+   julia.mcquoid                
+   Kawaye, Floney               
+   Khan, Nasreen                
+   Konings, Paul                
+   Kraus, Hans-Joerg            
+   Kuramotto De Bednarik, Carola
+   Lee, Peter                   
+   Lei, Junran                  
+   Lucas, Claire                
+   MacFarlane, Kevin            
+   Magnus, Muhammad             
+   Manger, Peter                
+   Markham, Francis             
+   martin.young                 
+   Mazumdar, Soumya             
+   McDougall, Janet             
+   McEachern, Steven            
+   McFarlane, Rosemary          
+   McNellie, Megan              
+   McQuoid, Julia               
+   Merrin, Linda                
+   Moon, Brenda                 
+   Nizette, Mark                
+   Patrick, Marian              
+   peter.taylor                 
+   Porfirio, Luciana            
+   Potter, Sandra               
+   Powell, Susan                
+   Rangkuti, Hasnani            
+   robert.davy                  
+   Roberts, Simon               
+   Roberts, Steven              
+   robyn.kinghamedwards         
+   romcfarlane                  
+   Sato, Chloe                  
+   Singh Dillon, Wira           
+   ssilcot                      
+   Stein, Janet                 
+   stuart.collins.mail          
+   Szarka, Ian                  
+   Talent, Mishka               
+   Tennant, Philip              
+   Thompson, Chris              
+   Van Bommel, Linda            
+   Viennet, Elvina              
+   Xiang, Fan                   
+  
+#+end_src

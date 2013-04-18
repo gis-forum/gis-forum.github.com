@@ -42,7 +42,8 @@
                 <p></p>
                 <a class="About" href="/aboutus.html">About →</a>
                 <!--<a class="About" href="/aboutus.html">About →</a>-->  
-                <!-- <p><a class="Document" href="/GIS-Forum.html">Document →</a></p> -->
+                <p></p>
+                <p><a class="study" href="/study.html">Study groups →</a></p> 
   
   
   
@@ -129,99 +130,109 @@ The forum meets TUESDAYS at 1-2pm at the Australian National University in Canbe
 *** COMMENT aboutus-code
 #+name:aboutus
 #+begin_src markdown :tangle aboutus.md :exports none :eval no :padline no
---- 
-name: about-us
-layout: default
-title: About us
----
-
-Last Updated 12 April 2013
-
-
- Agmen, Fiona                 
- Andrews, Ambrose             
- Bagheri, Nasser              
- Beaty, Matthew               
- Beh, Jie-Lian                
- ben.searle                   
- Booneeady, Prithiviraj       
- brad.lee                     
- bryonyretter                 
- Burgher, Isabela             
- Burns, Emma                  
- Butler, Ainslie              
- Butler, Danielle             
- cchartres2                   
- conan.liu                    
- Dallakoti, Babu              
- Dancey, Kay                  
- Davies, Ben                  
- Dear, Keith                  
- Doran, Bruce                 
- Ens, Emilie-Jane             
- Evans, Ben                   
- Evans, Megan                 
- frank.detering               
- Fu, Baihua                   
- Gray, Cathy                  
- Griffiths, Rachael           
- grzegorz                     
- Hanigan, Ivan                
- Hewett, Michael              
- Hicks, Andrew                
- Hugh, Sonia                  
- Hunter, Nerida               
- Iwanaga, Iwanaga             
- jin.cui                      
- Jones, Eriita                
- josephguillaume              
- julia.mcquoid                
- Kawaye, Floney               
- Khan, Nasreen                
- Konings, Paul                
- Kraus, Hans-Joerg            
- Kuramotto De Bednarik, Carola
- Lee, Peter                   
- Lei, Junran                  
- Lucas, Claire                
- MacFarlane, Kevin            
- Magnus, Muhammad             
- Manger, Peter                
- Markham, Francis             
- martin.young                 
- Mazumdar, Soumya             
- McDougall, Janet             
- McEachern, Steven            
- McFarlane, Rosemary          
- McNellie, Megan              
- McQuoid, Julia               
- Merrin, Linda                
- Moon, Brenda                 
- Nizette, Mark                
- Patrick, Marian              
- peter.taylor                 
- Porfirio, Luciana            
- Potter, Sandra               
- Powell, Susan                
- Rangkuti, Hasnani            
- robert.davy                  
- Roberts, Simon               
- Roberts, Steven              
- robyn.kinghamedwards         
- romcfarlane                  
- Sato, Chloe                  
- Singh Dillon, Wira           
- ssilcot                      
- Stein, Janet                 
- stuart.collins.mail          
- Szarka, Ian                  
- Talent, Mishka               
- Tennant, Philip              
- Thompson, Chris              
- Van Bommel, Linda            
- Viennet, Elvina              
- Xiang, Fan                   
-
+  --- 
+  name: about-us
+  layout: default
+  title: About us
+  ---
+  
+  The members of the email list are below.
+  
+  If you are an ANU staff or student you can go to [http://alliance.anu.edu.au](http://alliance.anu.edu.au) and:
+  - log on with your ANU Horus identity
+  - and then go
+  My Workspace > Membership > Joinable sites 
+  - search for GIS forum and join (it is public).
+   
+  If you are not ANU you can email the list and request being added, and someone will do that for you. 
+  
+  Last Updated 17 April 2013
+  
+  
+   Agmen, Fiona                 
+   Andrews, Ambrose             
+   Bagheri, Nasser              
+   Beaty, Matthew               
+   Beh, Jie-Lian                
+   ben.searle                   
+   Booneeady, Prithiviraj       
+   brad.lee                     
+   bryonyretter                 
+   Burgher, Isabela             
+   Burns, Emma                  
+   Butler, Ainslie              
+   Butler, Danielle             
+   cchartres2                   
+   conan.liu                    
+   Dallakoti, Babu              
+   Dancey, Kay                  
+   Davies, Ben                  
+   Dear, Keith                  
+   Doran, Bruce                 
+   Ens, Emilie-Jane             
+   Evans, Ben                   
+   Evans, Megan                 
+   frank.detering               
+   Fu, Baihua                   
+   Gray, Cathy                  
+   Griffiths, Rachael           
+   grzegorz                     
+   Hanigan, Ivan                
+   Hewett, Michael              
+   Hicks, Andrew                
+   Hugh, Sonia                  
+   Hunter, Nerida               
+   Iwanaga, Iwanaga             
+   jin.cui                      
+   Jones, Eriita                
+   josephguillaume              
+   julia.mcquoid                
+   Kawaye, Floney               
+   Khan, Nasreen                
+   Konings, Paul                
+   Kraus, Hans-Joerg            
+   Kuramotto De Bednarik, Carola
+   Lee, Peter                   
+   Lei, Junran                  
+   Lucas, Claire                
+   MacFarlane, Kevin            
+   Magnus, Muhammad             
+   Manger, Peter                
+   Markham, Francis             
+   martin.young                 
+   Mazumdar, Soumya             
+   McDougall, Janet             
+   McEachern, Steven            
+   McFarlane, Rosemary          
+   McNellie, Megan              
+   McQuoid, Julia               
+   Merrin, Linda                
+   Moon, Brenda                 
+   Nizette, Mark                
+   Patrick, Marian              
+   peter.taylor                 
+   Porfirio, Luciana            
+   Potter, Sandra               
+   Powell, Susan                
+   Rangkuti, Hasnani            
+   robert.davy                  
+   Roberts, Simon               
+   Roberts, Steven              
+   robyn.kinghamedwards         
+   romcfarlane                  
+   Sato, Chloe                  
+   Singh Dillon, Wira           
+   ssilcot                      
+   Stein, Janet                 
+   stuart.collins.mail          
+   Szarka, Ian                  
+   Talent, Mishka               
+   Tennant, Philip              
+   Thompson, Chris              
+   Van Bommel, Linda            
+   Viennet, Elvina              
+   Xiang, Fan                   
+  
 #+end_src
 
 *** COMMENT add locations to map-code
@@ -259,7 +270,6 @@ Last Updated 12 April 2013
                     ipaddress="130.56.60.77", u="postgres", d="gislibrary", remove = F, eval = T)
   dbSendQuery(ch, "grant select on gisforumlocations to gislibrary")
 #+end_src
-
 *** COMMENT get-names-code
 #+name:get-names
 #+begin_src R :session *R* :tangle no :exports none :eval yes
@@ -358,4 +368,23 @@ Last Updated 12 April 2013
    Viennet, Elvina              
    Xiang, Fan                   
   
+#+end_src
+** study groups
+spdep@alliance.anu.edu.au
+#+begin_src markdown :tangle study.md :exports none :eval no :padline no
+---
+name: study
+layout: default
+title: Study Groups
+---
+
+## SPDEP: Spatial Dependence and Statistical Modelling
+The SPDEP group meets 2-3pm Thursdays at the School of Biology 46E (follow the sign Little Pickle café) [http://campusmap.anu.edu.au/displaymap.asp?grid=ef54](http://campusmap.anu.edu.au/displaymap.asp?grid=ef54)
+
+To join in and recieve the reading material contact the <a class="Contact spdep group" href="mailto:spdep@alliance.anu.edu.au"> spdep group email</a> or join via the [http://alliance.anu.edu.au](http://alliance.anu.edu.au) website.
+
+## Beginner level ArcGIS
+The Beginner level ArcGIS group has stopped having regular meetings.  If you want to set up some more meetings for this group contact the 
+<a class="Contact spdep group" href="mailto:gis_forum@alliance.anu.edu.au">GIS forum group email.</a> 
+    
 #+end_src

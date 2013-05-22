@@ -28,7 +28,6 @@ Janet McDougall (janet.mcdougall@anu.edu.au)
 Joseph Guillaume (joseph.guillaume@anu.edu.au)
 Julia McQuoid (j.mcquoid@unsw.edu.au)
 Kay Dancey (kay.dancey@anu.edu.au)
-Kay Dancey (kay.dancey@anu.edu.au)
 Luciana Porfirio
 Megan McNellie (megan.mcnellie@anu.edu.au)
 Mishka Talent (mishka.talent@anu.edu.au)

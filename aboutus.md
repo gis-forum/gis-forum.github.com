@@ -14,9 +14,7 @@ My Workspace > Membership > Joinable sites
  
 If you are not ANU you can email the list and request being added, and someone will do that for you. 
 
-Last Updated 22 May 2013
-
-
+List Last Updated 22 May 2013:
 - Ambrose Andrews (u4080622@anu.edu.au)
 - Andrew Hicks (andrew.hicks@anu.edu.au)
 - Dr Nasser  Bagheri (nasser.bagheri@anu.edu.ac)

@@ -1,0 +1,8 @@
+name: gis-forum
+description: GIS Forum
+url: http://gis-forum.github.com
+highlighter:      pygments
+markdown: kramdown
+permalink: /:year/:month/:title/
+# Custom vars
+version:          0.2.0

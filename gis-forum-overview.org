@@ -5,6 +5,7 @@
 #+LaTeX_CLASS_OPTIONS: [a4paper]
 #+LATEX: \tableofcontents
 -----
+rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/ivan_hanigan/projects/gis-forum.github.com/_site/*  ivan@gislibrary.anu.edu.au:gis-staging/
 
 * COMMENT layout
 ** COMMENT default
@@ -374,4 +375,26 @@ To join in and recieve the reading material contact the <a class="Contact spdep 
 The Beginner level ArcGIS group has stopped having regular meetings.  If you want to set up some more meetings for this group contact the 
 <a class="Contact spdep group" href="mailto:gis_forum@alliance.anu.edu.au">GIS forum group email.</a> 
     
+#+end_src
+* ewedb landing page
+*** COMMENT a-code
+#+name:a
+#+begin_src markdown  :tangle no :exports none :eval no
+  
+
+  <h2>Introduction </h2>
+        <li> This is the landing page for the ANU GIS Library and Extreme Weather Events Database Server.</br>
+          <li> The server is run by the ANU GIS Forum - a group of GIS users who have come together as a community of practice.</br>
+        <li> Please feel free to email the forum at the group email list <a href="mailto:gis_forum@alliance.anu.edu.au">gis_forum@alliance.anu.edu.au.</a href></br>
+          <li> All GIS questions or comments are welcomed. We focus on the following 5 themes: 1. Data Aquisition 2. Data Management 3. Data Analysis 4. Training 5. Communication.</br>
+        <li> The forum meets TUESDAYS at 1-2pm at the Australian National University in Canberra, usually in room F2 of the old Forestry Building (48).</br>
+          <li> For more info on the forum see <a href="http://gis-forum.github.io" target="_blank">http://gis-forum.github.io/</a href></br>
+        <p></p><h2>2 The ANU GIS Library</h2>
+          <li> There is a PostGIS server for members to use.</br>
+        <li> Public access is via our Geoserver at the link <a href="http://gislibrary-geo.anu.edu.au/dashboard" target="_blank">http://gislibrary-geo.anu.edu.au/dashboard</a></br>
+          <p></p><h2>3 The Extreme Weather Events Database</h2>
+        <li> The Extreme Weather Events database is a output of the National Centre for Epidemiology and Population Health SWISH project <a href="http://swish-climate-impact-assessment.github.io" target="_blank"> (http://swish-climate-impact-assessment.github.io/)</a></br>
+          <li> This hosts the Online Database of Australian Biomass and Bushfire Smoke Events at the link <a href="https://gislibrary-extreme-weather.anu.edu.au/biomass_smoke_events" target="_blank">https://gislibrary-extreme-weather.anu.edu.au/biomass_smoke_events</a></br>
+<p></p><p></p>
+  
 #+end_src

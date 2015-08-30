@@ -88,16 +88,17 @@ rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/iva
 ** Index
 *** COMMENT Index-head
 #+name:index
-#+begin_src markdown :tangle index.md :exports none :eval no :padline no
---- 
+#+begin_src R :tangle no :exports none :eval no :padline no
+----
 name: gis-forum
 layout: default
 title: GIS Forum
----
+----
+
 #+end_src
 *** Abstract
 #+name:Index-prose
-#+begin_src markdown :tangle index.md :exports reports :eval no
+#+begin_src R :tangle no :exports reports :eval no
 We are a group of GIS users who have come together as a community of practice.  Please feel free to email the forum at <a class="Contact the project" href="mailto:gis_forum@alliance.anu.edu.au">the group email list</a>. All GIS questions or comments are welcomed.
 We focus on the following 5 themes:
 1. Data Aquisition
@@ -180,7 +181,7 @@ The ABS boundaries are licenced under Creative Commons and come from  1261.0.30.
 ** COMMENT About
 *** COMMENT aboutus-code
 #+name:aboutus
-#+begin_src markdown :tangle aboutus.md :exports none :eval no :padline no
+#+begin_src markdown :tangle no :exports none :eval no :padline no
   --- 
   name: about-us
   layout: default

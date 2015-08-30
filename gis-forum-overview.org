@@ -44,7 +44,9 @@ rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/iva
                 <a class="About" href="/aboutus.html">About →</a>
                 <!--<a class="About" href="/aboutus.html">About →</a>-->  
                 <p></p>
-                <p><a class="study" href="/study.html">Study groups →</a></p> 
+                <p><a class="gislibrary" href="http://gislibrary.anu.edu.au">ANU GIS Library →</a></p> 
+                <p></p>
+                <p><a class="ewedb" href="https://datacommons.anu.edu.au:8443/DataCommons/item/anudc:3314">Extreme Weather Database →</a></p> 
   
   
   
@@ -57,20 +59,11 @@ rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/iva
   <p>
             {{ content }}
   </p>
-#+end_src
-*** COMMENT snip-code
-#+name:snip
-#+begin_src R :session *shell* :tangle no :exports none :eval no
-#### name:snip ####
+      </section>
 
-
-
-  <div id="disqus_thread"></div>
-    <script type="text/javascript" src="http://disentanglethings.disqus.com/embed.js"> </script>
-    <noscript>Please enable JavaScript to <a href="http://disentanglethings.disqus.com/?url=ref">view the discussion thread.</a></noscript>
-        </section>
         <footer>
-          <p>This project is maintained by <a href="https://github.com/ivanhanigan">ivanhanigan</a></p>
+          <p>Supported by <a href="https://datacommons.anu.edu.au/DataCommons/">ANU Data Commons</a></p>
+          <p>and by <a href="http://nceph.anu.edu.au/">NCEPH</a></p>
           <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
           <!--<p><small><a href="/indexlocal.html">Ivan's temporary local version for debugging</a></small></p>-->
   
@@ -85,6 +78,18 @@ rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/iva
   
 #+end_src
 
+*** COMMENT snip-code
+#+name:snip
+#+begin_src R :session *shell* :tangle no :exports none :eval no
+#### name:snip ####
+
+
+
+  <div id="disqus_thread"></div>
+    <script type="text/javascript" src="http://disentanglethings.disqus.com/embed.js"> </script>
+    <noscript>Please enable JavaScript to <a href="http://disentanglethings.disqus.com/?url=ref">view the discussion thread.</a></noscript>
+        </section>
+#+end_src
 ** Index
 *** COMMENT Index-head
 #+name:index

@@ -44,9 +44,9 @@ rsync -avz -e "ssh -i /home/ivan_hanigan/tools/macpro_ssh/.ssh/id_rsa" /home/iva
                 <a class="About" href="/aboutus.html">About →</a>
                 <!--<a class="About" href="/aboutus.html">About →</a>-->  
                 <p></p>
-                <p><a class="gislibrary" href="http://gislibrary.anu.edu.au">ANU GIS Library →</a></p> 
+                <p><a class="gislibrary" href="/gislibrary-info.html">ANU GIS Library →</a></p> 
                 <p></p>
-                <p><a class="ewedb" href="https://datacommons.anu.edu.au:8443/DataCommons/item/anudc:3314">Extreme Weather Database →</a></p> 
+                <p><a class="ewedb" href="/ewedb-info.html">Extreme Weather Database →</a></p> 
   
   
   
@@ -391,10 +391,7 @@ The Beginner level ArcGIS group has stopped having regular meetings.  If you wan
   <h2>Introduction </h2>
         <li> This is the landing page for the ANU GIS Library and Extreme Weather Events Database Server.</br>
           <li> The server is run by the ANU GIS Forum - a group of GIS users who have come together as a community of practice.</br>
-        <li> Please feel free to email the forum at the group email list <a href="mailto:gis_forum@alliance.anu.edu.au">gis_forum@alliance.anu.edu.au.</a href></br>
-          <li> All GIS questions or comments are welcomed. We focus on the following 5 themes: 1. Data Aquisition 2. Data Management 3. Data Analysis 4. Training 5. Communication.</br>
-        <li> The forum meets TUESDAYS at 1-2pm at the Australian National University in Canberra, usually in room F2 of the old Forestry Building (48).</br>
-          <li> For more info on the forum see <a href="http://gis-forum.github.io" target="_blank">http://gis-forum.github.io/</a href></br>
+
         <p></p><h2>2 The ANU GIS Library</h2>
           <li> There is a PostGIS server for members to use.</br>
         <li> Public access is via our Geoserver at the link <a href="http://gislibrary-geo.anu.edu.au/dashboard" target="_blank">http://gislibrary-geo.anu.edu.au/dashboard</a></br>

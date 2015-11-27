@@ -401,3 +401,160 @@ The Beginner level ArcGIS group has stopped having regular meetings.  If you wan
 <p></p><p></p>
   
 #+end_src
+* publishing new data to ewedb
+** setup landing page
+cd /var/www/html/web2py
+mkdir applications/poa_weather
+cp -r applications/welcome/* applications/poa_weather
+vi applications/poa_weather/views/default/index.html
+cp applications/biomass_smoke_events/views/default/index.html applications/poa_weather/views/default/index.html
+vi applications/poa_weather/views/default/index.html
+cp /var/www/html/web2py/applications/biomass_smoke_events/models/menu.py /var/www/html/web2py/applications/poa_weather/models/
+cd ../static
+scp ivan_hanigan@130.56.102.53/home/ivan_hanigan/projects/POAweather/data/* /.
+# open firewall breifly then close again
+
+*** COMMENT ls-code
+#+name:ls
+#+begin_src R :session *R* :tangle ls.R :exports none :eval no
+  #### name:ls ####
+  for(yy in  1990:2007){
+  #yy <- 1990
+  lnk <- sprintf("climate_poa_%s.csv", yy)
+  txt <- paste("<li>{{=XML(T('Download: %s',
+                 A('%(application)s/static/",lnk,"'%request,
+             _href=URL('static','",lnk,"'))))}}</li>",sep="")
+  cat(txt)
+  }
+  for(yy in  1990:2007){
+  #yy <- 1990
+  lnk <- sprintf("climate_poa_%s.csv", yy)
+  txt <- paste("scp ivan_hanigan@130.56.102.53/home/ivan_hanigan/projects/POAweather/data/",lnk,"\n",sep="")
+  cat(txt)
+  }
+  
+#+end_src
+*** html
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+  {{if 'message' in globals():}}
+    <h3>{{=message}}</h3>
+
+    <h4>{{=T('Meteorological Data for Australian Postal Areas')}}</h4>
+<li> CITATION: Hanigan, I. (2010). Meteorological Data for Australian Postal Areas. Australian Data Archive. doi:10.4225/13/50BBFCFE08A12 </li>
+<li> METADATA: https://datacommons.anu.edu.au/DataCommons/item/anudc:2651 </li>
+<li> LICENCE: CC BY 4.0 </li>
+
+    <h4>{{=T('Data')}}</h4>
+    <ol>
+           <li>{{=XML(T('Download: %s',
+               A('climate_poa_1990.csv'%request,
+           _href=URL('static','climate_poa_1990.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1991.csv'%request,
+           _href=URL('static','climate_poa_1991.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1992.csv'%request,
+           _href=URL('static','climate_poa_1992.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1993.csv'%request,
+           _href=URL('static','climate_poa_1993.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1994.csv'%request,
+           _href=URL('static','climate_poa_1994.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1995.csv'%request,
+           _href=URL('static','climate_poa_1995.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1996.csv'%request,
+           _href=URL('static','climate_poa_1996.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1997.csv'%request,
+           _href=URL('static','climate_poa_1997.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1998.csv'%request,
+           _href=URL('static','climate_poa_1998.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1999.csv'%request,
+           _href=URL('static','climate_poa_1999.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2000.csv'%request,
+           _href=URL('static','climate_poa_2000.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2001.csv'%request,
+           _href=URL('static','climate_poa_2001.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2002.csv'%request,
+           _href=URL('static','climate_poa_2002.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2003.csv'%request,
+           _href=URL('static','climate_poa_2003.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2004.csv'%request,
+           _href=URL('static','climate_poa_2004.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2005.csv'%request,
+           _href=URL('static','climate_poa_2005.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2006.csv'%request,
+           _href=URL('static','climate_poa_2006.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2007.csv'%request,
+           _href=URL('static','climate_poa_2007.csv'))))}}</li> 
+</ol>
+    {{elif 'content' in globals():}}
+{{=content}}
+    {{else:}}
+{{=BEAUTIFY(response._vars)}}
+    {{pass}}
+
+    {{block right_sidebar}}
+{{=A(T("About these data"), _href=URL('static', 'index.html'), _class='btn',
+         _style='margin-top: 1em;')}}
+{{end}}
+
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+  {{if 'message' in globals():}}
+    <h3>{{=message}}</h3>
+
+    <h4>{{=T('Meteorological Data for Australian Postal Areas')}}</h4>
+<li> CITATION: Hanigan, I. (2010). Meteorological Data for Australian Postal Areas. Australian Data Archive. doi:10.4225/13/50BBFCFE08A12 </li>
+<li> METADATA: https://datacommons.anu.edu.au/DataCommons/item/anudc:2651 </li>
+<li> LICENCE: CC BY 4.0 </li>
+
+    <h4>{{=T('Data')}}</h4>
+    <ol>
+           <li>{{=XML(T('Download: %s',
+               A('climate_poa_1990.csv'%request,
+           _href=URL('static','climate_poa_1990.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1991.csv'%request,
+           _href=URL('static','climate_poa_1991.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1992.csv'%request,
+           _href=URL('static','climate_poa_1992.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1993.csv'%request,
+           _href=URL('static','climate_poa_1993.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1994.csv'%request,
+           _href=URL('static','climate_poa_1994.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1995.csv'%request,
+           _href=URL('static','climate_poa_1995.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1996.csv'%request,
+           _href=URL('static','climate_poa_1996.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1997.csv'%request,
+           _href=URL('static','climate_poa_1997.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1998.csv'%request,
+           _href=URL('static','climate_poa_1998.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_1999.csv'%request,
+           _href=URL('static','climate_poa_1999.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2000.csv'%request,
+           _href=URL('static','climate_poa_2000.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2001.csv'%request,
+           _href=URL('static','climate_poa_2001.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2002.csv'%request,
+           _href=URL('static','climate_poa_2002.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2003.csv'%request,
+           _href=URL('static','climate_poa_2003.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2004.csv'%request,
+           _href=URL('static','climate_poa_2004.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2005.csv'%request,
+           _href=URL('static','climate_poa_2005.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2006.csv'%request,
+           _href=URL('static','climate_poa_2006.csv'))))}}</li><li>{{=XML(T('Download: %s',
+               A('climate_poa_2007.csv'%request,
+           _href=URL('static','climate_poa_2007.csv'))))}}</li> 
+</ol>
+    {{elif 'content' in globals():}}
+{{=content}}
+    {{else:}}
+{{=BEAUTIFY(response._vars)}}
+    {{pass}}
+
+    {{block right_sidebar}}
+{{=A(T("About these data"), _href=URL('static', 'index.html'), _class='btn',
+         _style='margin-top: 1em;')}}
+{{end}}

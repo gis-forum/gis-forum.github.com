@@ -6,7 +6,7 @@ title: GIS Forum
 
 
 
-We are a group of GIS users who have come together as a community of practice.  Please feel free to email the forum at <a class="Contact the project" href="mailto:ivan.hanigan@canberra.edu.au">the group email list</a>. All GIS questions or comments are welcomed.
+We are a group of GIS users who have come together as a community of practice.  Please feel free to email the forum at <a class="gis-forum@groups.io" href="mailto:gis-forum@groups.io">the group email list</a>. All GIS questions or comments are welcomed.
 We focus on the following 5 themes:
 
 1. Data Aquisition
